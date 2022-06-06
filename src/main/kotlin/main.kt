@@ -16,7 +16,7 @@ fun main() {
 
     //your code here
 
-    print(analyzer.countAppsDevelopedBySpecificCompany(dataSource,"google"))
+    print(analyzer.getLargestAppByCompany(dataSource," mate "))
 
 }
 

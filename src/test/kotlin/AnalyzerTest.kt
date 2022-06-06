@@ -358,7 +358,7 @@ internal class AnalyzerTest {
     @Test
     fun should_ReturnNull_when_Company_not_include_in_list_app(){
         //when get largest App Developed Specific Company
-        val result = analyzer.largestAppDevelopedSpecificCompany(fakeApps," SpaceX ")
+        val result = analyzer.getLargestAppByCompany(fakeApps," SpaceX ")
         //then find the result
         assertNull(result)
     }
@@ -366,7 +366,7 @@ internal class AnalyzerTest {
     @Test
     fun should_ReturnNull_when_Company_correct(){
         //when get largest App Developed Specific Company
-        val result = analyzer.largestAppDevelopedSpecificCompany(fakeApps, "Google LLC")
+        val result = analyzer.getLargestAppByCompany(fakeApps, "Google LLC")
         //then find the result
         var exception: App = App(
             name = "App 8",
@@ -381,11 +381,11 @@ internal class AnalyzerTest {
         assertEquals(exception,result)
     }
     @Test
-    fun should_ReturnNull_when_Company_Null_list(){
+    fun should_ReturnNull_when_Company_Not_contains_list(){
         //give
         var faker: List<App> = listOf()
         //when get largest App Developed Specific Company
-        val result = analyzer.largestAppDevelopedSpecificCompany(faker)
+        val result = analyzer.getLargestAppByCompany(faker,"App")
         //then find the result
         assertNull(result)
     }
