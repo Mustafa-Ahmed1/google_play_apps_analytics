@@ -16,8 +16,7 @@ fun main() {
 
     //your code here
 
-    print(analyzer.countAppsDevelopedBySpecificCompany(dataSource,"google"))
-
+     print(analyzer.countAppsDevelopedBySpecificCompany(dataSource,"google"))
 }
 
 fun seeResultOfRequirements(apps:List<App>):String {
@@ -46,7 +45,7 @@ fun seeResultOfRequirements(apps:List<App>):String {
             "2" ->results = textOfRequirements[1].split(',')[0].drop(3) + (analyzer.findPercentageOfSpecificApp(apps,"medical")).toString() + textOfRequirements[1].split(',')[1]
 //            "3"->results = textOfRequirements[2].split(',')[0].drop(3) + ("app name: ${analyzer.getOldestApp(apps)?.name} ,last update at:  ${analyzer.getOldestApp(apps)?.updatedAt}") + textOfRequirements[2].split(',')[1]
             "3"->results = textOfRequirements[2].split(',')[0].drop(3) + analyzer.getOldestApp(apps) + textOfRequirements[2].split(',')[1]
-            "4"->results = textOfRequirements[3].split(',')[0].drop(3) + (analyzer.calculatePercentageOfAppsRunningOnSpecificVersion(apps,"9.1 and up")).toString()  + textOfRequirements[3].split(',')[1]
+            "4"->results = textOfRequirements[3].split(',')[0].drop(3) + (analyzer.calculatePercentageOfAppsRunningOnSpecificVersion(apps,9.1)).toString()  + textOfRequirements[3].split(',')[1]
             "5"->{
                 results += textOfRequirements[4].split(',')[0].drop(3)
                 analyzer.getTopInstalledApps(apps,10).forEach(){

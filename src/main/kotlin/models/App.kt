@@ -9,7 +9,7 @@ data class App(
     val size: Double,
     val installsCount: Long,
     val currentVersion: String,
-    val requiresAndroid: String,
+    val requiresAndroid: Double?,
 ) {}
 
 

@@ -3,6 +3,7 @@ import models.App
 import utility.SetIndex
 import utility.extension.convertSizeToUniqueUnit
 import utility.extension.convertStringToDateObject
+import utility.extension.convertStringToDouble
 import java.io.File
 
 class DataParser(): DataSource {
@@ -24,7 +25,7 @@ class DataParser(): DataSource {
                     size = appData[SetIndex.SIZE].convertSizeToUniqueUnit(),
                     installsCount = appData[SetIndex.INSTALLS_COUNT].toLong(),
                     currentVersion = appData[SetIndex.CURRENT_VERSION],
-                    requiresAndroid = appData[SetIndex.REQUIRES_ANDROID],
+                    requiresAndroid = appData[SetIndex.REQUIRES_ANDROID].convertStringToDouble()
                 )
             )
         }
