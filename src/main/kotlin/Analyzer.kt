@@ -43,20 +43,16 @@ class Analyzer {
 
     /**
      * function @return [App] developed by Specific Company
-     * @param company is default "Meta Platforms Inc."
+     * @param listApps and  companyName is required
      */
-    fun largestAppDevelopedSpecificCompany(apps: List<App>, company: String = "Meta Platforms Inc." ): App? {
-        return when {
-            apps.isEmpty() -> null
-            company.isEmpty() -> null
-            else -> {
-                var companyApp: List<App> = apps.filter { it.company == company }
-                when {
-                    companyApp.isNullOrEmpty() -> null
-                    else -> getLargestApps(companyApp, 1)[0]
-                }
-            }
-        }
+
+    fun getLargestAppByCompany(listApps: List<App>, companyName: String): App? {
+        return if(listApps.isNotEmpty()  && !companyName.isNullOrBlank()){
+             val companyApp: List<App> = listApps.filter {
+                 it.company.lowercase().contains(companyName.lowercase().trim())
+             }
+             getLargestApps(companyApp, 1).firstOrNull()
+        }else null
     }
 
     fun  getLargestApps(apps:List<App>,n:Int):List<App> = apps.sortedByDescending { it.size }.take(n)

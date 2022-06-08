@@ -22,12 +22,12 @@ workspace.xml
 /js/js.translator/testData/out-pir/
 .gradle/
 build/
-!**/src/**/build
-!**/test/**/build
+/src/**/build
+/test/**/build
 *.iml
 .idea/compiler.xml\
 .gradle/
-!**/testData/**/*.iml
+/testData/**/*.iml
 .idea/remote-targets.xml
 .idea/libraries/Gradle*.xml
 .idea/libraries/Maven*.xml
