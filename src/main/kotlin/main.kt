@@ -16,7 +16,7 @@ fun main() {
 
     //your code here
 
-     print(analyzer.countAppsDevelopedBySpecificCompany(dataSource,"google"))
+    println(analyzer.calculatePercentageOfAppsRunningOnSpecificVersion(dataSource,5.0))
 }
 
 fun seeResultOfRequirements(apps:List<App>):String {
