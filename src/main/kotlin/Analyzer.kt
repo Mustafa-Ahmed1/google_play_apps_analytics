@@ -30,15 +30,15 @@ class Analyzer {
         } else null
     }
 
-    fun  calculatePercentageOfAppsRunningOnSpecificVersion(apps:List<App>,version:String):Double{
+    fun  calculatePercentageOfAppsRunningOnSpecificVersion(apps:List<App>,version:Double):Double{
         var counter = 0.0
-        if (apps.isEmpty()) return -1.0
-        apps.forEach {
-            if (it.requiresAndroid.trim() == version) {
-                counter++
+        return if (apps.isNotEmpty()){
+            apps.forEach{
+                if(it.requiresAndroid==version)
+                    counter++
             }
-        }
-        return round( counter / apps.size * 100) / 100
+            round( counter / apps.size * 100)
+        } else -1.0
     }
 
     /**

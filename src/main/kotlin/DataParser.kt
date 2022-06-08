@@ -5,6 +5,7 @@ import utility.extension.convertSizeToMegabyte
 import utility.GooglePlayCsvColumnIndex
 import utility.extension.convertSizeToUniqueUnit
 import utility.extension.convertStringToDateObject
+import utility.extension.convertStringToDouble
 import java.io.File
 
 class DataParser(): DataSource {
@@ -26,7 +27,7 @@ class DataParser(): DataSource {
                     size = appData[SetIndex.SIZE].convertSizeToMegabyte(),
                     installsCount = appData[SetIndex.INSTALLS_COUNT].toLong(),
                     currentVersion = appData[SetIndex.CURRENT_VERSION],
-                    requiresAndroid = appData[SetIndex.REQUIRES_ANDROID],
+                    requiresAndroid = appData[SetIndex.REQUIRES_ANDROID].convertStringToDouble()
                 )
             )
         }

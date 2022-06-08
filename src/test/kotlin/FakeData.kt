@@ -13,7 +13,7 @@ class FakeData {
             size = "5.0M".convertSizeToUniqueUnit(),
             installsCount = 5,
             currentVersion = "1",
-            requiresAndroid = "4.4 and up",
+            requiresAndroid = 4.4,
         ),
         App(
             name = "App 2",
@@ -23,7 +23,7 @@ class FakeData {
             size = "22M".convertSizeToUniqueUnit(),
             installsCount = 100000,
             currentVersion = "1.4.4-0e73d19a",
-            requiresAndroid = "7.0 and up",
+            requiresAndroid = 7.0,
         ),
         App(
             name = "App 3",
@@ -33,7 +33,7 @@ class FakeData {
             size = "28M".convertSizeToUniqueUnit(),
             installsCount = 100000,
             currentVersion = "6.0.16-release",
-            requiresAndroid = "5.0 and up",
+            requiresAndroid = 5.0,
         ),
         App(
             name = "App 4",
@@ -43,7 +43,7 @@ class FakeData {
             size = "42M".convertSizeToUniqueUnit(),
             installsCount = 100000,
             currentVersion = "1.4.4-0e73d19a",
-            requiresAndroid = "7.0 and up",
+            requiresAndroid = 7.0,
         ),
         App(
             name = "App 5",
@@ -53,7 +53,7 @@ class FakeData {
             size = "1.1G".convertSizeToUniqueUnit(),
             installsCount = 1800000,
             currentVersion = "7.0.2",
-            requiresAndroid = "5.0 and up",
+            requiresAndroid = 5.0,
         ),
         App(
             name = "App 6",
@@ -63,7 +63,7 @@ class FakeData {
             size = "63M".convertSizeToUniqueUnit(),
             installsCount = 5000000,
             currentVersion = "14.18.0.36314",
-            requiresAndroid = "5.0 and up",
+            requiresAndroid = 5.0,
         ),
         App(
             name = "App 7",
@@ -73,7 +73,7 @@ class FakeData {
             size = "800M".convertSizeToUniqueUnit(),
             installsCount = 5000000000,
             currentVersion = "2.22.10.73",
-            requiresAndroid = "4.1 and up",
+            requiresAndroid = 4.1,
         ),
         App(
             name = "App 8",
@@ -83,7 +83,7 @@ class FakeData {
             size = "28M".convertSizeToUniqueUnit(),
             installsCount = 100000,
             currentVersion = "Varies with device",
-            requiresAndroid = "Varies with device",
+            requiresAndroid = 9.1,
         ),
         App(
             name = "App 9",
@@ -93,7 +93,7 @@ class FakeData {
             size = "42M".convertSizeToUniqueUnit(),
             installsCount = 5000000,
             currentVersion = "Varies with device",
-            requiresAndroid = "7.0 and up",
+            requiresAndroid = 7.0,
         ),
         App(
             name = "App 10",
@@ -103,7 +103,7 @@ class FakeData {
             size = "117M".convertSizeToUniqueUnit(),
             installsCount = 1800000,
             currentVersion = "8.5.0g",
-            requiresAndroid = "5.0 and up",
+            requiresAndroid = 5.0,
 
             ),
         App(
@@ -114,7 +114,7 @@ class FakeData {
             size = "87M".convertSizeToUniqueUnit(),
             installsCount = 10000000,
             currentVersion = "0.17.1",
-            requiresAndroid = " 9 and up",
+            requiresAndroid = 9.1,
         ),
         App(
             name = "App 12",
@@ -124,7 +124,7 @@ class FakeData {
             size = "64M".convertSizeToUniqueUnit(),
             installsCount = 1000000,
             currentVersion = "1.16.2",
-            requiresAndroid = "9 and up",
+            requiresAndroid = 9.1,
         ),
         App(
             name = "App 13",
@@ -134,7 +134,7 @@ class FakeData {
             size = "37M".convertSizeToUniqueUnit(),
             installsCount = 1000000,
             currentVersion = "2.25.4",
-            requiresAndroid = "9 and up",
+            requiresAndroid = 9.0,
         ),
         App(
             name = "App 14",
@@ -144,7 +144,7 @@ class FakeData {
             size = "42M".convertSizeToUniqueUnit(),
             installsCount = 100000,
             currentVersion = "1.4.4-0e73d19a",
-            requiresAndroid = "7.0 and up",
+            requiresAndroid = 7.0,
         ),
         App(
             name = "App 15",
@@ -154,7 +154,7 @@ class FakeData {
             size = "9.6M".convertSizeToUniqueUnit(),
             installsCount = 1000000,
             currentVersion = "7.0.2",
-            requiresAndroid = "5.0 and up",
+            requiresAndroid = 5.0,
 
             ),
         App(
@@ -165,7 +165,7 @@ class FakeData {
             size = "Varies with device".convertSizeToUniqueUnit(),
             installsCount = 1000000,
             currentVersion = "5.3.5",
-            requiresAndroid = "5.0 and up",
+            requiresAndroid = 5.0,
         ),
         App(
             name = "App 17",
@@ -175,7 +175,7 @@ class FakeData {
             size = "800M".convertSizeToUniqueUnit(),
             installsCount = 5000000000,
             currentVersion = "2.22.10.73",
-            requiresAndroid = "4.1 and up",
+            requiresAndroid = 4.1,
         ),
         App(
             name = "App 18",
@@ -185,7 +185,7 @@ class FakeData {
             size = "1.1G".convertSizeToUniqueUnit(),
             installsCount = 50000000,
             currentVersion = "30.0.271",
-            requiresAndroid = "5.0 and up",
+            requiresAndroid = 5.0,
         ),
         App(
             name = "App 19",
@@ -195,7 +195,7 @@ class FakeData {
             size = "4.7M".convertSizeToUniqueUnit(),
             installsCount = 5000000,
             currentVersion = "10, 1.0.0",
-            requiresAndroid = "9 and up",
+            requiresAndroid = 9.0,
         ),
         App(
             name = "App 20",
@@ -205,7 +205,7 @@ class FakeData {
             size = "117M".convertSizeToUniqueUnit(),
             installsCount = 10,
             currentVersion = "8.5.0g",
-            requiresAndroid = "5.0 and up",
+            requiresAndroid = 5.0,
         ),
     )
 

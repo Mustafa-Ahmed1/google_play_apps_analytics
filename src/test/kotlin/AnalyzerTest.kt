@@ -163,7 +163,7 @@ internal class AnalyzerTest {
             size = "22M".convertSizeToUniqueUnit(),
             installsCount = 100000,
             currentVersion = "1.4.4-0e73d19a",
-            requiresAndroid = "7.0 and up",
+            requiresAndroid = 7.0,
         )
         assertEquals(exception,result)
     }
@@ -176,21 +176,15 @@ internal class AnalyzerTest {
     @Test
     fun should_ReturnPercentageOfAppsRunningOnSpecificVersion_when_VersionIsValid(){
         //when calculate the percentage of apps running on specific valid version
-        val result = analyzer.calculatePercentageOfAppsRunningOnSpecificVersion(fakeApps,"9 and up")
+        val result = analyzer.calculatePercentageOfAppsRunningOnSpecificVersion(fakeApps,9.0)
         //then find the result
-        assertEquals(0.2, result)
+        assertEquals(10.0, result)
     }
-    @Test
-    fun should_ReturnZero_WhenCalculatePercentageOfAppsRunningOnBlankStringVersion(){
-        //when calculate the percentage of apps running on blank version
-        val result = analyzer.calculatePercentageOfAppsRunningOnSpecificVersion(fakeApps, "")
-        //then
-        assertEquals(0.0,result)
-    }
+
     @Test
     fun should_ReturnZero_when_CalculatePercentageOfAppsRunningOnNotValidVersion(){
         //when calculate percentage of apps running on not valid version
-        val result = analyzer.calculatePercentageOfAppsRunningOnSpecificVersion(fakeApps, "9.0")
+        val result = analyzer.calculatePercentageOfAppsRunningOnSpecificVersion(fakeApps, 2.1)
         //then find the result
         assertEquals(0.0, result)
     }
@@ -200,7 +194,7 @@ internal class AnalyzerTest {
 
         fakeApps= listOf()
         //when calculate percentage of apps using empty list
-        val result = analyzer.calculatePercentageOfAppsRunningOnSpecificVersion(fakeApps, "9.0")
+        val result = analyzer.calculatePercentageOfAppsRunningOnSpecificVersion(fakeApps, 9.0)
         //then find the result
         assertEquals(-1.0, result)
     }
@@ -225,7 +219,7 @@ internal class AnalyzerTest {
                 size = "800M".convertSizeToUniqueUnit(),
                 installsCount = 5000000000,
                 currentVersion = "2.22.10.73",
-                requiresAndroid = "4.1 and up",
+                requiresAndroid = 4.1,
             ),
             App(
                 name = "App 17",
@@ -235,7 +229,7 @@ internal class AnalyzerTest {
                 size = "800M".convertSizeToUniqueUnit(),
                 installsCount = 5000000000,
                 currentVersion = "2.22.10.73",
-                requiresAndroid = "4.1 and up",
+                requiresAndroid = 4.1,
             ),
             App(
                 name = "App 18",
@@ -245,7 +239,7 @@ internal class AnalyzerTest {
                 size = "1.1G".convertSizeToUniqueUnit(),
                 installsCount = 50000000,
                 currentVersion = "30.0.271",
-                requiresAndroid = "5.0 and up",
+                requiresAndroid = 5.0,
             )
         )
         assertEquals(topThreeApps, result)
@@ -262,7 +256,7 @@ internal class AnalyzerTest {
                     size = "800M".convertSizeToUniqueUnit(),
                     installsCount = 5000000000,
                     currentVersion = "2.22.10.73",
-                    requiresAndroid = "4.1 and up",
+                    requiresAndroid = 4.1,
                 ),
                 App(
                     name = "App 17",
@@ -272,7 +266,7 @@ internal class AnalyzerTest {
                     size = "800M".convertSizeToUniqueUnit(),
                     installsCount = 5000000000,
                     currentVersion = "2.22.10.73",
-                    requiresAndroid = "4.1 and up",
+                    requiresAndroid = 4.1,
                 ),
                 App(
                     name = "App 18",
@@ -282,7 +276,7 @@ internal class AnalyzerTest {
                     size = "1.1G".convertSizeToUniqueUnit(),
                     installsCount = 50000000,
                     currentVersion = "30.0.271",
-                    requiresAndroid = "5.0 and up",
+                    requiresAndroid = 5.0,
                 )
         )
         //when fined top 10 app install
@@ -297,7 +291,7 @@ internal class AnalyzerTest {
                 size = "800M".convertSizeToUniqueUnit(),
                 installsCount = 5000000000,
                 currentVersion = "2.22.10.73",
-                requiresAndroid = "4.1 and up",
+                requiresAndroid = 4.1,
             ),
             App(
                 name = "App 17",
@@ -307,7 +301,7 @@ internal class AnalyzerTest {
                 size = "800M".convertSizeToUniqueUnit(),
                 installsCount = 5000000000,
                 currentVersion = "2.22.10.73",
-                requiresAndroid = "4.1 and up",
+                requiresAndroid = 4.1,
             ),
             App(
                 name = "App 18",
@@ -317,7 +311,7 @@ internal class AnalyzerTest {
                 size = "1.1G".convertSizeToUniqueUnit(),
                 installsCount = 50000000,
                 currentVersion = "30.0.271",
-                requiresAndroid = "5.0 and up",
+                requiresAndroid = 5.0,
             )
         )
         assertEquals(topThreeApps, result)
@@ -376,7 +370,7 @@ internal class AnalyzerTest {
             size = "28M".convertSizeToUniqueUnit(),
             installsCount = 100000,
             currentVersion = "Varies with device",
-            requiresAndroid = "Varies with device",
+            requiresAndroid = 9.1
         )
         assertEquals(exception,result)
     }
