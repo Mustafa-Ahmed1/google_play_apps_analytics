@@ -1,7 +1,7 @@
 import interfaces.DataSource
 import models.App
 import utility.SetIndex
-import utility.extension.convertSizeToUniqueUnit
+import utility.extension.convertSizeToMegabyte
 import utility.extension.convertStringToDateObject
 import java.io.File
 
@@ -21,7 +21,7 @@ class DataParser(): DataSource {
                     company = appData[SetIndex.COMPANY],
                     category = appData[SetIndex.CATEGORY],
                     updatedAt = appData[SetIndex.UPDATED_AT].convertStringToDateObject(),
-                    size = appData[SetIndex.SIZE].convertSizeToUniqueUnit(),
+                    size = appData[SetIndex.SIZE].convertSizeToMegabyte(),
                     installsCount = appData[SetIndex.INSTALLS_COUNT].toLong(),
                     currentVersion = appData[SetIndex.CURRENT_VERSION],
                     requiresAndroid = appData[SetIndex.REQUIRES_ANDROID],
