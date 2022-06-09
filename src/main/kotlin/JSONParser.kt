@@ -2,6 +2,7 @@ import interfaces.DataSource
 import models.App
 import org.json.JSONArray
 import org.json.JSONObject
+import utility.extension.convertSizeToMegabyte
 import utility.extension.convertStringToDateObject
 import utility.extension.toRequiredAndroidVersion
 import java.io.File
@@ -20,9 +21,9 @@ class JSONParser(): DataSource {
                     company = jsonObject.getString("company"),
                     category = jsonObject.getString("category"),
                     updatedAt = jsonObject.getString("updated").convertStringToDateObject(),
-                    size = jsonObject.getString("size").toRequiredAndroidVersion()!!,
+                    size = jsonObject.getString("size").convertSizeToMegabyte(),
                     installsCount = jsonObject.getInt("installs").toLong(),
-                    currentVersion = jsonObject.getString("currentVersion"),
+                    currentVersion = jsonObject.get("currentVersion").toString(),
                     requiresAndroid = jsonObject.getString("requiresAndroid").toRequiredAndroidVersion(),
                 )
             )
