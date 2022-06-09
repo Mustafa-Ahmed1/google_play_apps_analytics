@@ -8,8 +8,8 @@ fun main() {
 
     // root init project
     val readCSV = ReadCSV()
-    val file = readCSV.readCSV(PATH_FILE_GOOGLE_PLAY_CSV)
-    val dataSource: List<App> = DataParser().getAllApps(file)
+    val file = readCSV.readCSV("assets/google_play.json")
+    val dataSource: List<App> = JSONParser().getAllApps(file)
     val analyzer = Analyzer()
 
     //your code here

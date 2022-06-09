@@ -3,7 +3,7 @@ import models.App
 import utility.extension.convertSizeToMegabyte
 import utility.GooglePlayCsvColumnIndex
 import utility.extension.convertStringToDateObject
-import utility.extension.convertStringToDouble
+import utility.extension.toRequiredAndroidVersion
 import java.io.File
 
 class DataParser(): DataSource {
@@ -25,7 +25,7 @@ class DataParser(): DataSource {
                     size = appData[GooglePlayCsvColumnIndex.SIZE].convertSizeToMegabyte(),
                     installsCount = appData[GooglePlayCsvColumnIndex.INSTALLS_COUNT].toLong(),
                     currentVersion = appData[GooglePlayCsvColumnIndex.CURRENT_VERSION],
-                    requiresAndroid = appData[GooglePlayCsvColumnIndex.REQUIRES_ANDROID].convertStringToDouble(),
+                    requiresAndroid = appData[GooglePlayCsvColumnIndex.REQUIRES_ANDROID].toRequiredAndroidVersion(),
                 )
             )
         }
