@@ -1,9 +1,7 @@
 import interfaces.DataSource
 import models.App
-import utility.SetIndex
 import utility.extension.convertSizeToMegabyte
 import utility.GooglePlayCsvColumnIndex
-import utility.extension.convertSizeToUniqueUnit
 import utility.extension.convertStringToDateObject
 import utility.extension.convertStringToDouble
 import java.io.File
@@ -20,14 +18,14 @@ class DataParser(): DataSource {
             val appData = it.split(",")
             googlePlayApps.add(
                 App(
-                    name = appData[SetIndex.NAME],
-                    company = appData[SetIndex.COMPANY],
-                    category = appData[SetIndex.CATEGORY],
-                    updatedAt = appData[SetIndex.UPDATED_AT].convertStringToDateObject(),
-                    size = appData[SetIndex.SIZE].convertSizeToMegabyte(),
-                    installsCount = appData[SetIndex.INSTALLS_COUNT].toLong(),
-                    currentVersion = appData[SetIndex.CURRENT_VERSION],
-                    requiresAndroid = appData[SetIndex.REQUIRES_ANDROID].convertStringToDouble()
+                    name = appData[GooglePlayCsvColumnIndex.NAME],
+                    company = appData[GooglePlayCsvColumnIndex.COMPANY],
+                    category = appData[GooglePlayCsvColumnIndex.CATEGORY],
+                    updatedAt = appData[GooglePlayCsvColumnIndex.UPDATED_AT].convertStringToDateObject(),
+                    size = appData[GooglePlayCsvColumnIndex.SIZE].convertSizeToMegabyte(),
+                    installsCount = appData[GooglePlayCsvColumnIndex.INSTALLS_COUNT].toLong(),
+                    currentVersion = appData[GooglePlayCsvColumnIndex.CURRENT_VERSION],
+                    requiresAndroid = appData[GooglePlayCsvColumnIndex.REQUIRES_ANDROID].convertStringToDouble(),
                 )
             )
         }

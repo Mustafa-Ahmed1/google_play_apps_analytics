@@ -1,7 +1,7 @@
 import models.App
 import org.junit.jupiter.api.*
 import org.junit.jupiter.api.Test
-import utility.extension.convertSizeToUniqueUnit
+import utility.extension.convertSizeToMegabyte
 import utility.extension.convertStringToDateObject
 import kotlin.test.*
 
@@ -155,12 +155,12 @@ internal class AnalyzerTest {
         //when list oldest App correct
         val result = analyzer.getOldestApp(fakeApps)
         //then find the result
-        var exception: App = App(
+        val exception = App(
             name = "App 2",
             company = "Google LLC",
             category = "Medical",
             updatedAt = "September 26 2017".convertStringToDateObject(),
-            size = "22M".convertSizeToUniqueUnit(),
+            size = "22M".convertSizeToMegabyte(),
             installsCount = 100000,
             currentVersion = "1.4.4-0e73d19a",
             requiresAndroid = 7.0,
@@ -216,7 +216,7 @@ internal class AnalyzerTest {
                 company = "WhatsApp LLC",
                 category = "Communication",
                 updatedAt = "May 9 2022".convertStringToDateObject(),
-                size = "800M".convertSizeToUniqueUnit(),
+                size = "800M".convertSizeToMegabyte(),
                 installsCount = 5000000000,
                 currentVersion = "2.22.10.73",
                 requiresAndroid = 4.1,
@@ -226,7 +226,7 @@ internal class AnalyzerTest {
                 company = "WhatsApp LLC",
                 category = "Communication",
                 updatedAt = "May 9 2022".convertStringToDateObject(),
-                size = "800M".convertSizeToUniqueUnit(),
+                size = "800M".convertSizeToMegabyte(),
                 installsCount = 5000000000,
                 currentVersion = "2.22.10.73",
                 requiresAndroid = 4.1,
@@ -236,7 +236,7 @@ internal class AnalyzerTest {
                 company = "Game Insight",
                 category = "Action",
                 updatedAt = "May 12 2022".convertStringToDateObject(),
-                size = "1.1G".convertSizeToUniqueUnit(),
+                size = "1.1G".convertSizeToMegabyte(),
                 installsCount = 50000000,
                 currentVersion = "30.0.271",
                 requiresAndroid = 5.0,
@@ -253,7 +253,7 @@ internal class AnalyzerTest {
                     company = "WhatsApp LLC",
                     category = "Communication",
                     updatedAt = "May 9 2022".convertStringToDateObject(),
-                    size = "800M".convertSizeToUniqueUnit(),
+                    size = "800M".convertSizeToMegabyte(),
                     installsCount = 5000000000,
                     currentVersion = "2.22.10.73",
                     requiresAndroid = 4.1,
@@ -263,7 +263,7 @@ internal class AnalyzerTest {
                     company = "WhatsApp LLC",
                     category = "Communication",
                     updatedAt = "May 9 2022".convertStringToDateObject(),
-                    size = "800M".convertSizeToUniqueUnit(),
+                    size = "800M".convertSizeToMegabyte(),
                     installsCount = 5000000000,
                     currentVersion = "2.22.10.73",
                     requiresAndroid = 4.1,
@@ -273,7 +273,7 @@ internal class AnalyzerTest {
                     company = "Game Insight",
                     category = "Action",
                     updatedAt = "May 12 2022".convertStringToDateObject(),
-                    size = "1.1G".convertSizeToUniqueUnit(),
+                    size = "1.1G".convertSizeToMegabyte(),
                     installsCount = 50000000,
                     currentVersion = "30.0.271",
                     requiresAndroid = 5.0,
@@ -288,7 +288,7 @@ internal class AnalyzerTest {
                 company = "WhatsApp LLC",
                 category = "Communication",
                 updatedAt = "May 9 2022".convertStringToDateObject(),
-                size = "800M".convertSizeToUniqueUnit(),
+                size = "800M".convertSizeToMegabyte(),
                 installsCount = 5000000000,
                 currentVersion = "2.22.10.73",
                 requiresAndroid = 4.1,
@@ -298,7 +298,7 @@ internal class AnalyzerTest {
                 company = "WhatsApp LLC",
                 category = "Communication",
                 updatedAt = "May 9 2022".convertStringToDateObject(),
-                size = "800M".convertSizeToUniqueUnit(),
+                size = "800M".convertSizeToMegabyte(),
                 installsCount = 5000000000,
                 currentVersion = "2.22.10.73",
                 requiresAndroid = 4.1,
@@ -308,7 +308,7 @@ internal class AnalyzerTest {
                 company = "Game Insight",
                 category = "Action",
                 updatedAt = "May 12 2022".convertStringToDateObject(),
-                size = "1.1G".convertSizeToUniqueUnit(),
+                size = "1.1G".convertSizeToMegabyte(),
                 installsCount = 50000000,
                 currentVersion = "30.0.271",
                 requiresAndroid = 5.0,
@@ -362,12 +362,12 @@ internal class AnalyzerTest {
         //when get largest App Developed Specific Company
         val result = analyzer.getLargestAppByCompany(fakeApps, "Google LLC")
         //then find the result
-        var exception: App = App(
+        val exception = App(
             name = "App 8",
             company = "Google LLC",
             category = "Tools",
             updatedAt = "May 12 2022".convertStringToDateObject(),
-            size = "28M".convertSizeToUniqueUnit(),
+            size = "28M".convertSizeToMegabyte(),
             installsCount = 100000,
             currentVersion = "Varies with device",
             requiresAndroid = 9.1
@@ -377,7 +377,7 @@ internal class AnalyzerTest {
     @Test
     fun should_ReturnNull_when_Company_Not_contains_list(){
         //give
-        var faker: List<App> = listOf()
+        val faker: List<App> = listOf()
         //when get largest App Developed Specific Company
         val result = analyzer.getLargestAppByCompany(faker,"App")
         //then find the result
