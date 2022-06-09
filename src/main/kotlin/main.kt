@@ -1,8 +1,7 @@
-import interfaces.DataSource
 import models.App
 import utility.PATH_FILE_GOOGLE_PLAY_CSV
 import utility.ReadCSV
-import utility.extension.convertStringToDateObject
+import utility.extension.convertSizeToMegabyte
 
 
 fun main() {
@@ -45,17 +44,17 @@ fun seeResultOfRequirements(apps:List<App>):String {
             "2" ->results = textOfRequirements[1].split(',')[0].drop(3) + (analyzer.findPercentageOfSpecificApp(apps,"medical")).toString() + textOfRequirements[1].split(',')[1]
 //            "3"->results = textOfRequirements[2].split(',')[0].drop(3) + ("app name: ${analyzer.getOldestApp(apps)?.name} ,last update at:  ${analyzer.getOldestApp(apps)?.updatedAt}") + textOfRequirements[2].split(',')[1]
             "3"->results = textOfRequirements[2].split(',')[0].drop(3) + analyzer.getOldestApp(apps) + textOfRequirements[2].split(',')[1]
-            "4"->results = textOfRequirements[3].split(',')[0].drop(3) + (analyzer.calculatePercentageOfAppsRunningOnSpecificVersion(apps,"9.1 and up")).toString()  + textOfRequirements[3].split(',')[1]
+            "4"->results = textOfRequirements[3].split(',')[0].drop(3) + (analyzer.calculatePercentageOfAppsRunningOnSpecificVersion(apps,"9.1 and up".convertSizeToMegabyte()))  + textOfRequirements[3].split(',')[1]
             "5"->{
                 results += textOfRequirements[4].split(',')[0].drop(3)
-                analyzer.getTopInstalledApps(apps,10).forEach(){
+                analyzer.getTopInstalledApps(apps,10).forEach {
                     results +="app name: ${it.name} , app size ${it.size}M\n"
                 }
                 results += textOfRequirements[4].split(',')[1]
             }
             "6"->{
                 results += textOfRequirements[5].split(',')[0].drop(3)
-                analyzer.getTopInstalledApps(apps,10).forEach(){
+                analyzer.getTopInstalledApps(apps,10).forEach {
                     results +="app name: ${it.name} , users installs the app for ${it.installsCount} times\n"
                 }
                 results += textOfRequirements[5].split(',')[1]

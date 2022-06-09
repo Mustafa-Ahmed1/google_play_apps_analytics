@@ -1,10 +1,5 @@
 package utility.extension
 
-/**
- * convert app from String type to Double and convert it to unique unit
- * @return Double
- */
-
 fun String.convertSizeToMegabyte(): Double {
     return when {
         this.contains("M") -> {
