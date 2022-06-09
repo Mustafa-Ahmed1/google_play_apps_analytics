@@ -1,14 +1,12 @@
 import models.App
-import utility.PATH_FILE_GOOGLE_PLAY_CSV
-import utility.ReadCSV
-import utility.extension.convertSizeToMegabyte
+import utility.ReadFile
 
 
 fun main() {
 
     // root init project
-    val readCSV = ReadCSV()
-    val file = readCSV.readCSV("assets/google_play.json")
+    val readFile = ReadFile()
+    val file = readFile.readFile("assets/google_play.json")
     val dataSource: List<App> = JSONParser().getAllApps(file)
     val analyzer = Analyzer()
 
@@ -20,7 +18,7 @@ fun main() {
 
     //your code here
 
-    print(analyzer.countAppsDevelopedBySpecificCompany(dataSource,"google"))
+    print(analyzer.countAppsDevelopedBySpecificCompany(dataSource,"Google LLC"))
 
 
 

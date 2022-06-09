@@ -2,8 +2,8 @@ package utility
 
 import java.io.File
 
-class ReadCSV {
-    fun readCSV(path: String): File {
+class ReadFile {
+    fun readFile(path: String): File {
         return File(path)
     }
 
