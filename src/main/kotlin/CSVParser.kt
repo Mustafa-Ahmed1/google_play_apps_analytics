@@ -6,7 +6,7 @@ import utility.extension.convertStringToDateObject
 import utility.extension.toRequiredAndroidVersion
 import java.io.File
 
-class DataParser(): DataSource {
+class CSVParser(): DataSource {
 
     /**
      * convert data from csv file to @sample App model

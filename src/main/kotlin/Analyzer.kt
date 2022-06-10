@@ -52,7 +52,7 @@ class Analyzer {
                  it.company.lowercase().contains(companyName.lowercase().trim())
              }
              getLargestApps(companyApp, 1).firstOrNull()
-        }else null
+        } else null
     }
 
     fun  getLargestApps(apps:List<App>, n:Int):List<App> = apps.sortedByDescending { it.size }.take(n)
