@@ -12,7 +12,7 @@ class CSVParser(): DataSource {
      * convert data from csv file to @sample App model
      * @return List<App>
      */
-    private fun getGooglePlayAppsFromCsv(file: File): List<App> {
+    private fun getGooglePlayAppsFromCSV(file: File): List<App> {
         val googlePlayApps = mutableListOf<App>()
         file.forEachLine {
             val appData = it.split(",")
@@ -36,6 +36,6 @@ class CSVParser(): DataSource {
     }
 
     override fun getAllApps(file: File): List<App> {
-        return getGooglePlayAppsFromCsv(file)
+        return getGooglePlayAppsFromCSV(file)
     }
 }
