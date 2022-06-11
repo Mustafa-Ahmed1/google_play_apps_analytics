@@ -2,8 +2,8 @@ import interfaces.DataSource
 import models.App
 import org.json.JSONArray
 import org.json.JSONObject
-import utility.extension.convertSizeToMegabyte
-import utility.extension.convertStringToDateObject
+import utility.extension.toMegabyte
+import utility.extension.toDateObject
 import utility.extension.toRequiredAndroidVersion
 import java.io.File
 
@@ -21,8 +21,8 @@ class JSONParser : DataSource {
                         name = getString("appName"),
                         company = getString("company"),
                         category = getString("category"),
-                        updatedAt = getString("updated").convertStringToDateObject(),
-                        size = getString("size").convertSizeToMegabyte(),
+                        updatedAt = getString("updated").toDateObject(),
+                        size = getString("size").toMegabyte(),
                         installsCount = getLong("installs"),
                         currentVersion = get("currentVersion").toString(),
                         requiresAndroid = getString("requiresAndroid").toRequiredAndroidVersion(),

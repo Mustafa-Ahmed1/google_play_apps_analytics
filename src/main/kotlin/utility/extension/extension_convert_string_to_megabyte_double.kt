@@ -1,6 +1,6 @@
 package utility.extension
 
-fun String.convertSizeToMegabyte(): Double {
+fun String.toMegabyte(): Double {
     return when {
         this.contains("M") -> {
             this.dropLast(1).toDouble()

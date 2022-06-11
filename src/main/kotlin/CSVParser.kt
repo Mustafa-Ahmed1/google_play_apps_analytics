@@ -1,8 +1,8 @@
 import interfaces.DataSource
 import models.App
 import utility.GooglePlayCsvColumnIndex
-import utility.extension.convertSizeToMegabyte
-import utility.extension.convertStringToDateObject
+import utility.extension.toMegabyte
+import utility.extension.toDateObject
 import utility.extension.toRequiredAndroidVersion
 import java.io.File
 
@@ -22,8 +22,8 @@ class CSVParser : DataSource {
                         name = appData[NAME],
                         company = appData[COMPANY],
                         category = appData[CATEGORY],
-                        updatedAt = appData[UPDATED_AT].convertStringToDateObject(),
-                        size = appData[SIZE].convertSizeToMegabyte(),
+                        updatedAt = appData[UPDATED_AT].toDateObject(),
+                        size = appData[SIZE].toMegabyte(),
                         installsCount = appData[INSTALLS_COUNT].toLong(),
                         currentVersion = appData[CURRENT_VERSION],
                         requiresAndroid = appData[REQUIRES_ANDROID].toRequiredAndroidVersion(),
