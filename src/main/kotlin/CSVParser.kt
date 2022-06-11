@@ -16,18 +16,21 @@ class CSVParser(): DataSource {
         val googlePlayApps = mutableListOf<App>()
         file.forEachLine {
             val appData = it.split(",")
-            googlePlayApps.add(
-                App(
-                    name = appData[GooglePlayCsvColumnIndex.NAME],
-                    company = appData[GooglePlayCsvColumnIndex.COMPANY],
-                    category = appData[GooglePlayCsvColumnIndex.CATEGORY],
-                    updatedAt = appData[GooglePlayCsvColumnIndex.UPDATED_AT].convertStringToDateObject(),
-                    size = appData[GooglePlayCsvColumnIndex.SIZE].convertSizeToMegabyte(),
-                    installsCount = appData[GooglePlayCsvColumnIndex.INSTALLS_COUNT].toLong(),
-                    currentVersion = appData[GooglePlayCsvColumnIndex.CURRENT_VERSION],
-                    requiresAndroid = appData[GooglePlayCsvColumnIndex.REQUIRES_ANDROID].toRequiredAndroidVersion(),
+            with(GooglePlayCsvColumnIndex) {
+                googlePlayApps.add(
+                    App(
+                        name = appData[NAME],
+                        company = appData[COMPANY],
+                        category = appData[CATEGORY],
+                        updatedAt = appData[UPDATED_AT].convertStringToDateObject(),
+                        size = appData[SIZE].convertSizeToMegabyte(),
+                        installsCount = appData[INSTALLS_COUNT].toLong(),
+                        currentVersion = appData[CURRENT_VERSION],
+                        requiresAndroid = appData[REQUIRES_ANDROID].toRequiredAndroidVersion(),
+                    )
                 )
-            )
+            }
+            
         }
         return  googlePlayApps
     }

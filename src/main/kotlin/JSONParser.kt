@@ -15,18 +15,21 @@ class JSONParser(): DataSource {
         val jsonString = file.readText()
         JSONArray(jsonString).forEach {
             val jsonObject = JSONObject(it.toString())
-            googlePlayApps.add(
-                App(
-                    name = jsonObject.getString("appName"),
-                    company = jsonObject.getString("company"),
-                    category = jsonObject.getString("category"),
-                    updatedAt = jsonObject.getString("updated").convertStringToDateObject(),
-                    size = jsonObject.getString("size").convertSizeToMegabyte(),
-                    installsCount = jsonObject.getLong("installs"),
-                    currentVersion = jsonObject.get("currentVersion").toString(),
-                    requiresAndroid = jsonObject.getString("requiresAndroid").toRequiredAndroidVersion(),
+            with(jsonObject) {
+                googlePlayApps.add(
+                    App(
+                        name = getString("appName"),
+                        company = getString("company"),
+                        category = getString("category"),
+                        updatedAt = getString("updated").convertStringToDateObject(),
+                        size = getString("size").convertSizeToMegabyte(),
+                        installsCount = getLong("installs"),
+                        currentVersion = get("currentVersion").toString(),
+                        requiresAndroid = getString("requiresAndroid").toRequiredAndroidVersion(),
+                    )
                 )
-            )
+            }
+            
         }
 
          return googlePlayApps
