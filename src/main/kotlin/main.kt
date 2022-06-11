@@ -1,4 +1,5 @@
 import models.App
+import utility.PATH_FILE_GOOGLE_PLAY_JSON
 import utility.ReadFile
 
 
@@ -6,7 +7,7 @@ fun main() {
 
     // root init project
     val readFile = ReadFile()
-    val file = readFile.readFile("assets/google_play.json")
+    val file = readFile.readFile(PATH_FILE_GOOGLE_PLAY_JSON)
     val dataSource: List<App> = JSONParser().getAllApps(file)
     val analyzer = Analyzer()
 
