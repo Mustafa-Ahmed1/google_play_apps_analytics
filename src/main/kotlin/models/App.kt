@@ -11,6 +11,6 @@ data class App(
     val installsCount: Long,
     val currentVersion: String,
     val requiresAndroid: Double?,
-) {}
+)
 
 

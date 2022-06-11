@@ -1,27 +1,29 @@
 import models.App
-import utility.PATH_FILE_GOOGLE_PLAY_JSON
-import utility.ReadFile
-
+import utility.*
 
 fun main() {
 
-    // root init project
     val readFile = ReadFile()
-    val file = readFile.readFile(PATH_FILE_GOOGLE_PLAY_JSON)
+    val file = readFile.readFile(FilePath.GOOGLE_PLAY_JSON)
+
     val dataSource: List<App> = JSONParser().getAllApps(file)
-    val analyzer = Analyzer()
 
-    with(analyzer) {
-        println(getOldestApp(dataSource))
-        println(getLargestApps(dataSource, 5))
-
+    with(Analyzer()) {
+        println("Number of Apps Developed by Google: " +
+            {countAppsDevelopedBySpecificCompany(dataSource, "Google")})
+        println("\nPercentage of medical apps: " +
+                findPercentageOfSpecificApp(dataSource, "Medical"))
+        println("\nOldest apps: " +
+                getOldestApp(dataSource))
+        println("\nPercentage of apps running on Android 9.0: " +
+                calculatePercentageOfAppsRunningOnSpecificVersion(dataSource, 9.0))
+        println("\nLargest app developed by Google: " +
+                getLargestAppByCompany(dataSource, "Google"))
+        println("\nLargest five apps: " +
+                getLargestApps(dataSource, 5))
+        println("\nTop 10 installed apps: " +
+                getTopInstalledApps(dataSource, 5))
     }
-
-    //your code here
-
-    print(analyzer.countAppsDevelopedBySpecificCompany(dataSource,"Google LLC"))
-
-
 
 }
 

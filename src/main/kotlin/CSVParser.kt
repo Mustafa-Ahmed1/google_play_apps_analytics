@@ -1,12 +1,12 @@
 import interfaces.DataSource
 import models.App
-import utility.extension.convertSizeToMegabyte
 import utility.GooglePlayCsvColumnIndex
+import utility.extension.convertSizeToMegabyte
 import utility.extension.convertStringToDateObject
 import utility.extension.toRequiredAndroidVersion
 import java.io.File
 
-class CSVParser(): DataSource {
+class CSVParser : DataSource {
 
     /**
      * convert data from csv file to @sample App model
@@ -30,9 +30,8 @@ class CSVParser(): DataSource {
                     )
                 )
             }
-            
         }
-        return  googlePlayApps
+        return googlePlayApps
     }
 
     override fun getAllApps(file: File): List<App> {

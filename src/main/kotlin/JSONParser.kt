@@ -7,7 +7,7 @@ import utility.extension.convertStringToDateObject
 import utility.extension.toRequiredAndroidVersion
 import java.io.File
 
-class JSONParser(): DataSource {
+class JSONParser : DataSource {
 
     private fun getGooglePlayAppsFromJSON(file: File): List<App> {
 
@@ -29,10 +29,10 @@ class JSONParser(): DataSource {
                     )
                 )
             }
-            
+
         }
 
-         return googlePlayApps
+        return googlePlayApps
     }
 
 

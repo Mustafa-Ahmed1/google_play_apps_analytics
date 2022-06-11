@@ -1,10 +1,11 @@
 package utility
 
-// path file in assets google_play.csv
-const val PATH_FILE_GOOGLE_PLAY_CSV = "assets/google_play.csv"
-const val PATH_FILE_GOOGLE_PLAY_JSON = "assets/google_play.json"
+object FilePath {
+    const val GOOGLE_PLAY_CSV = "assets/google_play.csv"
+    const val GOOGLE_PLAY_JSON = "assets/google_play.json"
+}
 
-// index of data class App
+
 object GooglePlayCsvColumnIndex {
     const val NAME = 0
     const val COMPANY = 1
