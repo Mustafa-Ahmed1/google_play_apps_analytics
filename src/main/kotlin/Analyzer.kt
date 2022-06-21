@@ -31,13 +31,8 @@ class Analyzer {
     }
 
     fun  calculatePercentageOfAppsRunningOnSpecificVersion(apps:List<App>, version:Double): Double {
-        var counter = 0.0
-        return if (apps.isNotEmpty()) { 
-            apps.forEach { 
-                if(it.requiresAndroid==version)
-                    counter++
-            }
-            round( counter / apps.size * 100)
+        return if (apps.isNotEmpty()) {
+         round(apps.count{it.requiresAndroid==version} / apps.size.toDouble()*100)
         } else -1.0
     }
 

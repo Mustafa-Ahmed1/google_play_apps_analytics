@@ -13,7 +13,7 @@ fun main() {
     with(analyzer) {
         println(getOldestApp(dataSource))
         println(getLargestApps(dataSource, 5))
-
+        println(calculatePercentageOfAppsRunningOnSpecificVersion(dataSource,9.0))
     }
 
     //your code here
